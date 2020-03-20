@@ -1,4 +1,5 @@
  TieTest←{
+⍝ Can there be a tie?
      ⎕IO←0
      n←≢⍵             ⍝ Number of coins
      b←2⊥⍣¯1⍳¯1+2*n   ⍝ Binary with n bits

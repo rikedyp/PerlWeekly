@@ -2,13 +2,14 @@
 ⍝ The elements of ⍵ (coins) are arranged in a line (vector/list) in a random order
 ⍝ The player and computer take turns choosing from either the right- or left-most coins without replacement
 ⍝ Who has the highest total value of coins after they have all been chosen?
-     ∨/=/+/TieTest ⍵:'It''s a tie!'
-     ⎕IO←0 ⍝ ⎕IO delenda est
+     ⎕IO←0  ⍝ ⎕IO delenda est
+     ⎕←'A tie is ','possible',⍨'im' ''⊃⍨∨/=/+/TieTest ⍵
      ⍺←1                                        ⍝ Computer goes first by default (⍺←0 for player first)
      n←≢⍵                                       ⍝ Number of coins
-     end←¯1+2×?2⍴⍨n                             ⍝ Random end choices (1 left, 2 right) todo: 0 1
-     choose←{⌽@(⍸¯1=⍵)⍋⍋⍵⍳⍵}end                 ⍝ Coin index choice sequence
+     end←?2⍴⍨n                                  ⍝ Random end choices (0 left, 1 right)
+     choose←{⌽@(0=⊢)⍋⍋⍵⍳⍵}end                   ⍝ Coin index choice sequence
      turns←n⍴(~,⊢)⍺                             ⍝ Turn sequence (0 player, 1 computer)
-     coins←⍵⌷⍨⊂turns{⍵}⌸choose                  ⍝ Coins chosen (0 player, 1 computer)
+     ⎕←coins←↑⍵∘{⍵⌷⍤0 1⊢⍺}¨(turns(⊂⊢)⌸choose)   ⍝ Coins chosen (1st row player, 2nd row computer)
+     =/+/coins:'It''s a tie!'
      ' wins!',⍨(>⌿+/coins)⊃'Player' 'Computer'  ⍝ Return winner in text message
  }
