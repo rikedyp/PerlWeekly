@@ -1,0 +1,11 @@
+ Diff_K←{
+     ⎕IO←0
+     diff←⍵=∘.-⍨⍺                      ⍝ k=A[i]-A[j] for all i,j
+⍝ Basic case: k≠0 and ⍺ is a vector (list)
+     (⍵≠0)∧(1=≢⍴⍺):↑⍸diff
+⍝ General case
+     ij←(1@(,(2×≢⍴⍺)∘⍴¨⍳⍴⍺))0⍴⍨⍴diff   ⍝ 1 where i=j
+     ⊢↑d←⍸diff×~ij                       ⍝ Diff_K index pairs
+     spli2←{(s⍴1↑⍨2÷⍨s←≢⍵)⊂⍵}          ⍝ Split even length vector in 2
+     spli2⍤1⊢d                        ⍝ Split each index pair
+ }

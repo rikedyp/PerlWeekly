@@ -1,0 +1,8 @@
+ FindPaths←{
+     ⍺←0   ⍝ Start at root node
+     ⎕←⍺
+     ⎕←c←,⍸⍵=⊃⌽⍺       ⍝ Who's parent is ⍺?
+     0≡⍺:⍵∘∇¨0∘,¨1↓c  ⍝ If root, follow paths
+     ⍬≡c:⍵        ⍝ At root
+     ⍵∘,¨⍺∘∇¨c      ⍝ Follow paths
+ }
