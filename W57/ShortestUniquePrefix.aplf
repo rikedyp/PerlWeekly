@@ -1,5 +1,6 @@
  ShortestUniquePrefix←{
 ⍝ ⍵: Nested list of words 
+⍝ ←: Shortest unique prefixes, not in order
      I←((⊃⊣)⌷⊢)⍤0 99            ⍝ Select indexer
      ⍺←1                        ⍝ Prefix length     
      p←⍺∘↑¨⍵                    ⍝ Prefixes
