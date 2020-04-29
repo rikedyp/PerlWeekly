@@ -6,9 +6,7 @@
 ⍝ ⍺: v1
 ⍝ ⍵: v2
 ⍝ ←: v1<v2: ¯1 ⋄ v1>v2: 1 ⋄ v1=v2: 0
-     NV←{⍎¨¨'.'∘(≠⊆⊢)¨'_'(≠⊆⊢)⍵}   ⍝ Numeric version number as nested numeric matrix
-                                   ⍝ (version_number alpha) ← NV v1
-     (v1 v2)←NV¨⍺ ⍵
-     ≡/v1 v2:0                     ⍝ Equal versions match
-     -/⍋v1 v2                      ⍝ Total Array Ordering (TAO) sorts for us
+     (v1 v2)←'_'∘(≠⊆⊢)¨⍺ ⍵   ⍝ Version number as nested vector
+     v1≡v2:0                 ⍝ Equal versions match
+     -/⍋v1 v2                ⍝ Total Array Ordering (TAO) sorts for us
  }
