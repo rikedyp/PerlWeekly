@@ -1,0 +1,11 @@
+ MinimumSumPath←{
+ ⍝ ⍵: Numeric matrix
+ ⍝ ←: (sum)(path_indices)(path_values)
+     ⎕IO←1
+     ⍺←1 1 ⍝ Start from top-left
+     s←2 2⍴1 0 0 ⍝ Step down (1 0) or right (0 1)
+     sv←s⌿⍨∨/(⍺(+⍤1)s)(∧/=)⍤1⍤1 99↑,⍳⍴⍵
+     sss←s⌷⍨⊃⍋(⍺⌷⍵)+⍵[↓⍺(+⍤1)sv]
+     ⍺≡⊃⌽,⍳⍴⍵:⍺
+     ⍺((⍺+sss)∇ ⍵)
+ }
