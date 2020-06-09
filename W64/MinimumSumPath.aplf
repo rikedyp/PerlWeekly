@@ -5,7 +5,11 @@
      ⍺←1 1 ⍝ Start from top-left
      s←2 2⍴1 0 0 ⍝ Step down (1 0) or right (0 1)
      sv←s⌿⍨∨/(⍺(+⍤1)s)(∧/=)⍤1⍤1 99↑,⍳⍴⍵
-     sss←s⌷⍨⊃⍋(⍺⌷⍵)+⍵[↓⍺(+⍤1)sv]
      ⍺≡⊃⌽,⍳⍴⍵:⍺
-     ⍺((⍺+sss)∇ ⍵)
+     sss←s⌷⍨⊃⍋(⍺⌷⍵)+⍵[↓⍺(+⍤1)sv]
+     ⍺≢⊃⍳⍴⍵:(⊂⍺),⊆((⍺+sss)∇ ⍵)
+     ⍝(⊂⍺),⊆((⍺+sss)∇ ⍵)
+     path_indices←(⊂⍺),⊆((⍺+sss)∇ ⍵)
+     sum←+/path_values←⍵⌷⍤1 99⍨↑path_indices
+     (sum)(path_indices)(path_values)
  }
