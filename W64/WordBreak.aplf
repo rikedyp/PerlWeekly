@@ -1,9 +1,0 @@
- WordBreak←{
-     FindMask←{
-         i←⍳≢⍺
-         (lb≤i)∧i<ub←(≢⍵)+lb←⍸⍵⍷⍺
-     }
-     masks←↑⍺∘FindMask¨⍵
-     part←{+⌿(⍳≢⍵)×⍤0 1⊢⍵}(⊂∘⍒⌷⊢)masks
-     part⊆⍺
- }
