@@ -1,7 +1,0 @@
-]create # PerlWeekly
-)cs W63
-
-tests←⍉⍪'[ea]l' '  hello world'
-tests⍪←'(?i)ch.t' 'Don''t match too much, Chet!'
-tests⍪←'in re' 'spaces in regexp won''t match'
-
