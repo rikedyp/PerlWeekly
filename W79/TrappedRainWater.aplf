@@ -1,0 +1,7 @@
+ TrappedRainWater←{
+     +/⍵-⍨+/∨⍀⍵∘.≥⍳⌈/⍵
+⍝    +/                 Sum of
+⍝      ⍵-⍨              bottom of buckets
+⍝         +/∨⍀          to top of buckets
+⍝             ⍵∘.≥⍳⌈/⍵  in a histogram rep. of ⍵
+ }
