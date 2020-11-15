@@ -1,5 +1,7 @@
  Sudoku←{
 ⍝ Solve numeric 9×9 matrix sudoku puzzle
+⍝ Only works if there is 1 solution
+⍝ For more competent solvers, see https://dfns.dyalog.com/n_sudoku.htm
      sc←{⍵~⍨⍳9}¨1 1↓⊂⍤⊢⌺(2 2⍴3)⊢0⍪0⍪0,0,⍵ ⍝ Possible in subcells
      r←{⊂⍵~⍨⍳9}⍤1⊢⍵                       ⍝ Possible in rows
      c←{⊂⍵~⍨⍳9}⍤1⍉⍵                       ⍝ Possible in columns
