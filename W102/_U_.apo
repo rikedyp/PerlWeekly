@@ -1,0 +1,3 @@
+_U_←{ ⍝ Under: apply ⍺⍺ in the domain of ⍵⍵
+⍺ ⍵⍵⍣¯1⊢⍺⍺ ⍺ ⍵⍵ ⍵
+}
