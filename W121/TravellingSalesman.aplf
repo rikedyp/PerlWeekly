@@ -1,0 +1,11 @@
+ TravellingSalesman←{
+     ⎕IO←0
+⍝ Brute force travelling salesman
+⍝ ⍵: Matrix of path costs. ⍵[i;j] is cost from node i to j
+⍝ indices number costs
+⍝ permutations totals bitmask
+     'dfns'⎕CY'pmat'   ⍝ Permutation matrix
+     i←⍳n←≢c←⍵
+     b←(⊢∊⌊/)t←+/c[(¯1∘⌽,¨⊢)p←pmat n]
+     b∘⌿¨t,⍥⊂⍥⍪p
+ }
