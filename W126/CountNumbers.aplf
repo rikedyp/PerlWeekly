@@ -9,4 +9,11 @@
 ⍝ A brute force version:
 ⍝ Converts integers up to ⍵ into character vectors and removes those that contain '1'
 ⍝ CountNumbersBrute ← {+/~'1'∘∊¨⍕¨⍳⍵}
+
+⍝ Memoisation:
+⍝ Performance can be significantly improved with dfns.memo
+⍝ 'memo'⎕CY'dfns'
+⍝ 'cache'⎕NS⍬
+⍝ cache.(keys vals)←⍬⍬
+⍝ CountNumbersMemo ← CountNumbers memo cache
  }
