@@ -1,0 +1,6 @@
+ AlienDictionary←{
+⍝ ⍵: List of strings
+⍝ ⍺: Character dictionary :: simple character vector
+⍝ ←: ⍵ sorted lexicographically according to ⍺
+     ⍵[⍺⍋↑⍵]
+ }
