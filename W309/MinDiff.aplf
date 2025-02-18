@@ -1,0 +1,5 @@
+ MinDiff←{
+     1≥≢⍵:0                 ⍝ No differences for 1 or fewer elements
+     ⌊/|∊⍵-(⍳≢⍵)↓¨⊂⍵        ⍝ Compute for upper triangle of outer product only
+                            ⍝ Faster than regular outer product after a few hundred elements
+ }
